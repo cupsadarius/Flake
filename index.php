@@ -1,8 +1,12 @@
 <?php
 
 use application\assets\Registry;
-use application\assets\Routes;
+use application\assets\Routes\RouteManager;
+use application\assets\Routes\Route;
 use application\controllers\ControllerFactory;
+use application\assets\Routes\Conditions;
+use application\assets\Routes\Binds;
+
 
 spl_autoload_extensions(".php");
 spl_autoload_register();
@@ -27,14 +31,31 @@ $twig = new Twig_Environment($loader);
 
 //register services
 $app->register('twig',$twig);
-$app->register('routes',new Routes());
 $app->register('controllerFactory',new ControllerFactory());
 
 //controllers
 $home = $app->controllerFactory->buildHomeController();
 
+//define conditions
+$conditions = new Conditions();
+$conditions->register('popup',function($app){
+   	echo "<script type='text/javascript'>alert('im in a binding');</script>";
+    return true;
+});
+$app->register('conditions',$conditions);
 
 //define routes
-$app->routes->get('/',array($home,'indexAction',$app));
+$routeManager = new RouteManager();
 
-$app->routes->get('/hello/{name}',array($home,'helloAction',$app));
+$routeManager->addRoute(new Route('get','/',$home,'indexAction'),'home');
+
+$routeManager->addRoute(new Route('get','/hello/{name}',$home,'helloAction'),'hello');
+
+$app->register('routes',$routeManager);
+//add bindings
+$bindings = new Binds();
+$bindings->before('home','popup');
+$app->register('bindings',$bindings);
+
+//run 
+$app->run();
