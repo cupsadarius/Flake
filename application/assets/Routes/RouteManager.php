@@ -12,7 +12,6 @@ namespace application\assets\Routes;
 class RouteManager {
 
     private  $routes = array();
-
     public function __construct(){
 
     }

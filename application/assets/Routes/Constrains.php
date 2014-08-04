@@ -9,7 +9,7 @@
 namespace application\assets\Routes;
 
 
-class Conditions {
+class Constrains {
 
     private $conditions = array();
 

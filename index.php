@@ -4,8 +4,8 @@ use application\assets\Registry;
 use application\assets\Routes\RouteManager;
 use application\assets\Routes\Route;
 use application\controllers\ControllerFactory;
-use application\assets\Routes\Conditions;
-use application\assets\Routes\Binds;
+use application\assets\Routes\Constrains;
+use application\assets\Routes\Bindings;
 
 
 spl_autoload_extensions(".php");
@@ -37,7 +37,7 @@ $app->register('controllerFactory',new ControllerFactory());
 $home = $app->controllerFactory->buildHomeController();
 
 //define conditions
-$conditions = new Conditions();
+$conditions = new Constrains();
 $conditions->register('popup',function($app){
    	echo "<script type='text/javascript'>alert('im in a binding');</script>";
     return true;
@@ -53,7 +53,7 @@ $routeManager->addRoute(new Route('get','/hello/{name}',$home,'helloAction'),'he
 
 $app->register('routes',$routeManager);
 //add bindings
-$bindings = new Binds();
+$bindings = new Bindings();
 $bindings->before('home','popup');
 $app->register('bindings',$bindings);
 

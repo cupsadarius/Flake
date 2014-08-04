@@ -9,7 +9,7 @@
 namespace application\assets\Routes;
 
 
-class Binds {
+class Bindings {
 
     private $bindings = array();
 

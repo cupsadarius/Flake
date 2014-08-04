@@ -34,9 +34,9 @@ class Route {
         } else {
             if(isset($this->pattern)&&($this->pattern != '/')){
                 preg_match_all('/(?<={).*?(?=})/',$this->pattern,$keys);
+                $patern_root = substr($this->pattern,0,strpos($this->pattern,'{',1));
                 $keys = $keys[0];
-                $uri_root = substr($_SERVER['REQUEST_URI'],0,strpos($_SERVER['REQUEST_URI'],'/',1)+1);
-                $vals = explode('/',substr($_SERVER['REQUEST_URI'],strlen($uri_root),strlen($_SERVER['REQUEST_URI'])-strlen($uri_root)));
+                $vals = explode('/',substr($_SERVER['REQUEST_URI'],strlen($patern_root),strlen($_SERVER['REQUEST_URI'])-strlen($patern_root)));
                 foreach($keys as $key=>$value){
                     $val = (isset($vals[$key])&&!empty($vals[$key]))?htmlentities($vals[$key]):0;
                     $this->request->push($value,$val);
