@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flake Project{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+</head>
+<body>
+<header class="container">
+    {% block nav %}
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Flake Project</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">Home</a></li>
+            </ul>
+        </div>
+
+    </div>
+    {% endblock %}
+</header>
+<section class="container">
+    {% block header %}
+    <div class="jumbotron text-center">
+        <h1>Welcome to Flake Project</h1>
+        {% if name %}
+        <p class="lead">Hello {{ name }}</p>
+        {% endif %}
+    </div>
+    {% endblock %}
+    
+</section>
+<footer class="container well">
+{% block footer %}<p class="col-md-4 col-md-offset-8">Designed by Cupsa Darius | Powered by Flake</p>{% endblock %}
+</footer>
+<!-- Jquery scripts -->
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrapValidator.min.js"></script>
+</body>
+</html>
