@@ -11,7 +11,7 @@ use application\assets\Routes\Bindings;
 spl_autoload_extensions(".php");
 spl_autoload_register();
 
-require_once __DIR__.'/application/lib/Twig/Autoloader.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 $app = Registry::getInstance();
 
