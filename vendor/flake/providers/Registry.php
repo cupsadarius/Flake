@@ -6,7 +6,7 @@
  * Time: 4:06 PM
  */
 
-namespace application\assets;
+namespace flake\providers;
 
 
 class Registry {

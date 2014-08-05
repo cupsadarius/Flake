@@ -6,8 +6,8 @@
  * Time: 10:03 AM
  */
 
-namespace application\assets\Routes;
-use application\assets\Request;
+namespace flake\providers\Routes;
+use flake\providers\Request;
 class Route {
 
     private $request;

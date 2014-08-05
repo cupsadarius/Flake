@@ -6,7 +6,7 @@
  * Time: 12:06 PM
  */
 
-namespace application\assets\Routes;
+namespace flake\providers\Routes;
 
 
 class RouteManager {
