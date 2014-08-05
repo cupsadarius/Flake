@@ -6,7 +6,7 @@
  * Time: 11:35 AM
  */
 
-namespace application\assets\Routes;
+namespace flake\providers\Routes;
 
 
 class Bindings {

@@ -6,7 +6,7 @@
  * Time: 10:16 AM
  */
 
-namespace application\assets;
+namespace flake\providers;
 
 
 class Request {

@@ -1,22 +1,21 @@
 <?php
 
-use application\assets\Registry;
-use application\assets\Routes\RouteManager;
-use application\assets\Routes\Route;
+use flake\providers\Registry;
+use flake\providers\Routes\Route;
+use flake\providers\Routes\RouteManager;
+use flake\providers\Routes\Constrains;
+use flake\providers\Routes\Bindings;
 use application\controllers\ControllerFactory;
-use application\assets\Routes\Constrains;
-use application\assets\Routes\Bindings;
-
 
 spl_autoload_extensions(".php");
 spl_autoload_register();
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 $app = Registry::getInstance();
 
 $app->register('dev_mode',true);
-$app->register('base_url','http://localhost');
+$app->register('base_url','http://flake.local');
 if($app->dev_mode){
     function exception_handler(Exception $e){
         file_put_contents(__DIR__.'/logs/exceptions.log',"Exception caught: ".$e->getMessage()."\n",FILE_APPEND);

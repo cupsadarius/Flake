@@ -1,17 +1,5 @@
 {
-    "name": "flake/flake",
-    "type": "framework",
-    "description": "Light framework",
-    "keywords": ["framework","twig"],
-    "homepage": "http://github.com/cupsadarius/Flake",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Cupsa Darius",
-            "email": "cupsadarius@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    
     "require": {
         "php": ">=5.5.0",
 		"twig/twig": "1.16.*@dev"
