@@ -1,0 +1,7 @@
+{
+    "require": {
+		:Flake/Flake: ~1.*",
+        "twig/twig": "1.16.*@dev"
+
+    }
+}
