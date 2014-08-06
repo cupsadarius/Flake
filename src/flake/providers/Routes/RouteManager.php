@@ -6,7 +6,7 @@
  * Time: 12:06 PM
  */
 
-namespace flake\providers\Routes;
+namespace Flake\Providers\Routes;
 
 
 class RouteManager {
