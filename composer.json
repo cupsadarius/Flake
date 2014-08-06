@@ -1,8 +1,8 @@
 {
+	"minimum-stability": "dev",
     "name": "flake/flake",
-    "type": "framework",
-    "description": "Light framework",
-    "keywords": ["framework","twig"],
+    "description": "Light microframework",
+    "keywords": ["microframework","twig"],
     "homepage": "http://github.com/cupsadarius/Flake",
     "license": "MIT",
     "authors": [
@@ -15,6 +15,13 @@
     "require": {
         "php": ">=5.5.0",
 		"twig/twig": "1.16.*@dev"
-		
+    }
+	"autoload": {
+		"psr-0": {	"Flake": "src/"	}
+	}
+	"extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }

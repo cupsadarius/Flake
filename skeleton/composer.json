@@ -1,0 +1,6 @@
+{
+	"require": {
+		"flake/flake": "1.0.x-dev",
+		"twig/twig": "1.16.*@dev"
+	}
+}
