@@ -6,7 +6,7 @@
  * Time: 11:35 AM
  */
 
-namespace flake\providers\Routes;
+namespace Flake\Providers\Routes;
 
 
 class Bindings {

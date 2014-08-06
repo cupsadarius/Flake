@@ -6,7 +6,7 @@
  * Time: 4:06 PM
  */
 
-namespace flake\providers;
+namespace Flake\Providers;
 
 
 class Registry {
