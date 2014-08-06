@@ -1,6 +1,6 @@
 {
 	"require": {
-		"flake/flake": "1.0.x-dev",
+		"flake/flake": "1.0.*@dev",
 		"twig/twig": "1.16.*@dev"
 	}
 }
